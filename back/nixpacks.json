@@ -2,9 +2,9 @@
     "phases": {
         "install": "cd back && npm install",
         "build": "cd back && npm run build",
-        "start": "npm start"
+        "start": "cd back && npm start"
     },
     "plan": {
-        "start": "node src/app.js"
+        "start": "node back/src/app.js"
     }
 }
