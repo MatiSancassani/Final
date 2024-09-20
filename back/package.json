@@ -4,8 +4,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node test/utils.test.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",

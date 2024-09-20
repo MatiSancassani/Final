@@ -1,10 +1,10 @@
 import path from 'path';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 const config = {
-    PORT: 8030,
+    PORT: process.env.PORT || 8080,
     SERVER: 'Server',
     DIRNAME: path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:\/)/, '$1')),
     // Esta función tipo getter nos permite configurar dinámicamente

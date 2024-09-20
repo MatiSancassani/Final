@@ -1,20 +1,19 @@
 import passport from "passport";
 import gitHubStrategy from 'passport-github2';
 import dotenv from 'dotenv';
-// import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
 import { generateToken } from "../utils/jsonwebtoken.js";
 import { getUserByEmailService, registerUserService } from "../services/users.services.js";
 import { createCartService } from "../services/carts.services.js";
 
-import config from "../config.js";
+// import config from "../config.js";
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 passport.use('github', new gitHubStrategy(
     {
-        clientID: config.GITHUB_CLIENT_ID,
-        clientSecret: config.GITHUB_CLIENT_SECRET,
-        callbackURL: config.GITHUB_CALLBACK_URL
+        clientID: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        callbackURL: process.env.GITHUB_CALLBACK_URL
     },
     async (accessToken, refreshToken, profile, done) => {
         try {

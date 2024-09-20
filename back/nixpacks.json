@@ -1,0 +1,10 @@
+{
+    "phases": {
+        "install": "cd back && npm install",
+        "build": "cd back && npm run build",
+        "start": "npm start"
+    },
+    "plan": {
+        "start": "node src/app.js"
+    }
+}
